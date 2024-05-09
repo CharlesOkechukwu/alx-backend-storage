@@ -6,5 +6,5 @@ CREATE TRIGGER decrease_qty AFTER INSERT ON orders
 FOR EACH ROW
 BEGIN
 	UPDATE items SET quamtity = quantity - NEW.number WHERE name = NEW.item_name;
-ENG $$
+END $$
 DELIMETER ;

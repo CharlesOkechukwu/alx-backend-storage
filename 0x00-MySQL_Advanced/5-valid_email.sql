@@ -1,4 +1,4 @@
---set trigger to reset valid-email attribute when email is changed
+-- set trigger to reset valid-email attribute when email is changed
 DROP TRIGGER IF EXISTS `reset_email`;
 DELIMITER $$
 CREATE TRIGGER `reset_email` BEFORE UPDATE ON users

@@ -24,9 +24,9 @@ class Cache:
         """accepts key and a callable as argument and returns
         the value of that key from a redis database"""
         value = self._redis.get(key)
-        if fn is None:
-            return value
-        return fn(value)
+        if fn is not None:
+            return fn(value)
+        return value
 
     def get_str(self, key: str) -> str:
         """parameterizes get methon with the callable to convert

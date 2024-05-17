@@ -26,8 +26,7 @@ class Cache:
         value = self._redis.get(key)
         if fn is None:
             return value
-        else:
-            return fn(value)
+        return fn(value)
 
     def get_str(self, key: str) -> str:
         """parameterizes get methon with the callable to convert
